@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Fortune.js Demo</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+	    body {
+	        text-align: center;
+	        font-family: sans-serif;
+	    }
+
+	    #main{
+	    	font-weight: normal;
+	    }
+
+	    #reload{
+	    	font-size: 80%;
+	    }
+    </style>
+</head>
+
+<body>
+    <br/>
+    <h1>Fortune.js</h1>
+    <br/>
+    <h2 id="main">
+		Fortunes loading...
+	</h2>
+    <i id="reload"></i>
+    <script type="text/javascript" src="fortune.js"></script>
+    <script>
+    fortune.getQuote(function(quote) {
+        document.getElementById("main").innerHTML = quote;
+        document.getElementById("reload").innerHTML = "Reload to see your another quote...";
+    });
+    </script>
+</body>
+
+</html>
