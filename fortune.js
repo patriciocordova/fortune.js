@@ -31,7 +31,10 @@
 
         function setFile(callback,filePath){
             if(typeof filePath === 'undefined'){
-                filePath = 'fortunes.txt';
+                var scripts = document.getElementsByTagName("script"),
+                src = scripts[scripts.length-1].src;
+                var fileFolder = src.substr(0, src.lastIndexOf("/"));
+                filePath = fileFolder + '/quotes.txt';
             }
 
             readFile(filePath, function(loaded,content){
